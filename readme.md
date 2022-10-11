@@ -1,18 +1,29 @@
-# C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
----
-
+# Valgrind exercise
+```
+Name - Shail Kiritkumar Shah
+UID - 119340547
+Assignment - Valgrind exercise | Week 6
+```
 ## Overview
 
-Simple starter C++ project with:
+- As per instruction in the assignment description, valgrind_exercise branch of cppboilerplate from https://github.com/dpiet/cpp-boilerplate has been cloned.
+- After building this boilerplate, we enlist the bugs detected by valgrind command *valgrind --leak-check=full ./app/shell-app* in '*valgrind_bugs_list.txt*' file
+- Errors are resolved and the log is saved in '*valgrind_bugs_resolved.txt*' file
+- Executed function and memory profiler using kcachegrind
 
-- cmake
-- googletest
+## Result
+
+1) Identified bugs using valgrind command and reported it in this [file](https://github.com/sshah115/ENPM808X-Valgrind-exercise/blob/e116b12d53d8068590b3bcee936960dee51b96fb/valgrind_bugs_list.txt) 
+
+2) Resolved identified bugs and reported the update valgrind command result in this [file](https://github.com/sshah115/ENPM808X-Valgrind-exercise/blob/e116b12d53d8068590b3bcee936960dee51b96fb/valgrind_bugs_resolved)
+
+3) Executed function and memory profiler using kcachegrind and following is the result:
+
+![KCachegrind](KCachegrind_Screenshot.png)
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/sshah115/ENPM808X-Valgrind-exercise
 cd <path to repository>
 mkdir build
 cd build
@@ -21,16 +32,6 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
-
-## Building for code coverage (for assignments beginning in Week 4)
-```
-sudo apt-get install lcov
-cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
-make
-make code_coverage
-```
-This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
-
 ## Working with Eclipse IDE ##
 
 ## Installation
@@ -39,7 +40,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/sshah115/ENPM808X-Valgrind-exercise
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
