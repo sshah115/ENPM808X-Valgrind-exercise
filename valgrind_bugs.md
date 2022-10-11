@@ -1,0 +1,32 @@
+# Valgrind command output before fixing bugs
+```
+==12264== Memcheck, a memory error detector
+==12264== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12264== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==12264== Command: ./app/shell-app
+==12264== 
+Averaged sensor reading: 10
+==12264== Conditional jump or move depends on uninitialised value(s)
+==12264==    at 0x10A31B: main (main.cpp:9)
+==12264== 
+==12264== 
+==12264== HEAP SUMMARY:
+==12264==     in use at exit: 44 bytes in 2 blocks
+==12264==   total heap usage: 4 allocs, 2 frees, 73,772 bytes allocated
+==12264== 
+==12264== 44 (24 direct, 20 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==12264==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12264==    by 0x10A46E: AnalogSensor::Read() (AnalogSensor.cpp:16)
+==12264==    by 0x10A2F7: main (main.cpp:7)
+==12264== 
+==12264== LEAK SUMMARY:
+==12264==    definitely lost: 24 bytes in 1 blocks
+==12264==    indirectly lost: 20 bytes in 1 blocks
+==12264==      possibly lost: 0 bytes in 0 blocks
+==12264==    still reachable: 0 bytes in 0 blocks
+==12264==         suppressed: 0 bytes in 0 blocks
+==12264== 
+==12264== Use --track-origins=yes to see where uninitialised values come from
+==12264== For lists of detected and suppressed errors, rerun with: -s
+==12264== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+```
